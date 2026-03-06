@@ -417,19 +417,48 @@ footer {
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 @media (max-width: 900px) {
-  nav { padding: 22px 28px; }
-  .nav-links { gap: 24px; }
+  html { font-size: 15px; }
+  nav { padding: 20px 24px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.75rem; letter-spacing: 0.15em; }
   #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-text { padding: 100px 28px 60px; }
-  .hero-image { height: 60vw; }
-  section { padding: 80px 28px; }
-  .gallery-grid { columns: 2; }
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero-text { padding: 96px 24px 48px; }
+  .hero-image { height: 70vw; }
+  .hero-stat-num { font-size: 4rem; }
+  section { padding: 72px 24px; }
+  .section-header { margin-bottom: 48px; }
+  .gallery-grid { columns: 2; column-gap: 10px; }
+  .gallery-item { margin-bottom: 10px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-portrait { aspect-ratio: 4/3; }
+  .about-stats { gap: 24px; flex-wrap: wrap; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .form-row { grid-template-columns: 1fr; }
-  footer { padding: 28px; flex-direction: column; gap: 16px; text-align: center; }
+  footer { padding: 28px 24px; flex-direction: column; gap: 16px; text-align: center; }
 }
+
 @media (max-width: 560px) {
+  html { font-size: 14px; }
+  nav { padding: 16px 20px; }
+  .nav-logo { font-size: 1.4rem; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.7rem; }
+  .hero-text { padding: 88px 20px 40px; }
+  .hero-image { height: 80vw; }
+  .hero-caption { bottom: 20px; left: 20px; font-size: 0.7rem; }
+  .hero-stat { top: 20px; right: 20px; }
+  .hero-stat-num { font-size: 3rem; }
+  section { padding: 56px 20px; }
   .gallery-grid { columns: 1; }
-  .about-stats { gap: 28px; }
+  .filter-row { gap: 6px; }
+  .filter-btn { padding: 7px 14px; font-size: 0.7rem; }
+  .about-stats { gap: 20px; }
+  .stat-number { font-size: 2.2rem; }
+  .contact-grid { gap: 36px; }
+  .contact-line-icon { width: 28px; height: 28px; font-size: 0.9rem; }
+  .form-submit { padding: 16px 28px; width: 100%; justify-content: center; }
+  footer { padding: 24px 20px; }
+  .lightbox-content { max-width: 95vw; }
+  .lightbox-caption { font-size: 1rem; }
+  .lightbox-close { top: 16px; right: 16px; }
 }
