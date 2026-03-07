@@ -167,8 +167,8 @@ export default function Home() {
       {/* MARQUEE */}
       <div className="marquee-wrap">
         <div className="marquee-track">
-          {['Cars & Motorsport', 'Events & Cosplay', 'Stages', 'Landscape', 'Portrait', 'Available for Commission',
-            'Cars & Motorsport', 'Events & Cosplay', 'Stages', 'Landscape', 'Portrait', 'Available for Commission'].map((item, i) => (
+          {['Cars & Motorsport', 'Events & Cosplay', 'Stages', 'Landscape', 'Portrait',
+            'Cars & Motorsport', 'Events & Cosplay', 'Stages', 'Landscape', 'Portrait'].map((item, i) => (
             <span key={i} className="marquee-item">{item}</span>
           ))}
         </div>
