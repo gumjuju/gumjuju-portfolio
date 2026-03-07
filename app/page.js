@@ -65,7 +65,7 @@ const filterLabels = { all: 'All', cars: 'Cars & Motorsport', events: 'Events & 
 
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState('all')
-  const [lightbox, setLightbox] = useState(null) // { src, title, loc }
+  const [lightbox, setLightbox] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const [formStatus, setFormStatus] = useState('')
   const [submitLabel, setSubmitLabel] = useState('Send Message →')
@@ -93,12 +93,22 @@ export default function Home() {
     return () => observer.disconnect()
   }, [activeFilter])
 
-  // Close lightbox on Escape
+  // Close lightbox on Escape or browser back button
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') setLightbox(null) }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
+
+  // Push history state when lightbox opens so back button closes it
+  useEffect(() => {
+    if (lightbox) {
+      window.history.pushState({ lightbox: true }, '')
+    }
+    const onPop = () => { setLightbox(null) }
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [lightbox])
 
   const visiblePhotos = activeFilter === 'all' ? photos : photos.filter(p => p.category === activeFilter)
 
