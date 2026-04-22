@@ -117,7 +117,7 @@ export default function Home() {
     setSubmitLabel('Sending…')
     setSubmitDisabled(true)
     try {
-      const res = await fetch('https://formspree.io/f/xlgprdwg', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         body: new FormData(e.target),
         headers: { Accept: 'application/json' },
