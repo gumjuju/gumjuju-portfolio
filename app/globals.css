@@ -5,9 +5,9 @@
 :root {
   --ink: #0f0f0f;
   --paper: #f7f5f0;
-  --muted: #9a9490;
-  --accent: #c8a97e;
-  --border: #e2dfd8;
+  --muted: #736e68;
+  --accent: #b5935a;
+  --border: #d4d0c6;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Lato', Helvetica, sans-serif;
 }
@@ -444,7 +444,7 @@ section { padding: 120px 80px; }
 }
 .form-input:focus, .form-textarea:focus { border-color: var(--ink); }
 .form-textarea { resize: none; height: 120px; }
-.form-input::placeholder, .form-textarea::placeholder { color: var(--border); }
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(15, 15, 15, 0.45); }
 .form-submit {
   display: inline-flex; align-items: center; gap: 16px;
   font-size: 1rem;
