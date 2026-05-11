@@ -1,5 +1,7 @@
 import { Cormorant_Garamond, Lato } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -23,7 +25,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${lato.variable}`}>
-      <body suppressHydrationWarning={true}>{children}<Analytics /></body>
+      <body suppressHydrationWarning={true}>
+        <Navbar />
+        {children}
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   )
 }
