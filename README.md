@@ -1,18 +1,31 @@
-# gumjuju-portfolio
+# GUMJUJU — Photography Portfolio
 
-Personal photography portfolio. Cars, events, stages, landscape, portrait — based in Kuala Lumpur.
+Personal photography portfolio covering Cars & Motorsport, Events & Cosplay, Stages, Landscape, and Portrait — based in Kuala Lumpur, Malaysia.
 
-Disclaimer: Do Not Use Pictures Here for Other Purposes.
+> **All images are copyright © GUMJUJU. Reproduction, redistribution, or use of any photograph for any purpose without explicit written permission is strictly prohibited.**
 
-Built with Next.js and deployed on Vercel.
+Live: [gumjuju.vercel.app](https://gumjuju-portfolio.vercel.app/)
 
+---
 
-## Run locally
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
+
+Requires a `.env.local` file with the necessary environment variables. See `.env.local.example`.
+
+---
+
+## License
+
+Code — MIT License.
+
+Photography — All rights reserved © GUMJUJU. No images from this repository or the live site may be copied, downloaded, modified, or used without explicit written permission from the author.
+
+---
 
 ## Contact
 

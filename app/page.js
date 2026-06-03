@@ -1,13 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { categories } from '@/lib/data'
 
 export default function Home() {
   const [formStatus, setFormStatus] = useState('')
   const [submitLabel, setSubmitLabel] = useState('Send Message →')
   const [submitDisabled, setSubmitDisabled] = useState(false)
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    fetch('/api/categories')
+      .then((r) => r.json())
+      .then(setCategories)
+      .catch(() => {})
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -50,7 +57,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="hero-image">
-          <img src="/images/others/_GUM1113.jpg" alt="Hero photo"
+          <img src="https://rkkleqi1njvjnzei.public.blob.vercel-storage.com/photos/landing%20page/_GUM1113.jpg" alt="Hero photo"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.18)', pointerEvents: 'none' }} />
           <div className="hero-stat">
@@ -83,7 +90,7 @@ export default function Home() {
           {categories.map((cat) => (
             <Link href={`/category/${cat.id}`} key={cat.id} className="category-card">
               <div className="category-card-img">
-                <img src={cat.image} alt={cat.label} />
+                <img src={cat.cover_src} alt={cat.label} />
                 <div className="category-card-overlay">
                   <h3 className="category-card-title">{cat.label}</h3>
                   <span className="category-card-link">Explore Library →</span>
@@ -104,7 +111,7 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-img-wrap">
             <div className="about-portrait">
-              <img src="/images/others/GUM_7003.jpg" alt="About"
+              <img src="https://rkkleqi1njvjnzei.public.blob.vercel-storage.com/photos/landing%20page/_GUM0834.jpg" alt="About"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
             <div className="about-frame" />

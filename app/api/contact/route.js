@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const FORM_ENDPOINT = process.env.FORMSPREE_ENDPOINT || 'https://formspree.io/f/xlgprdwg'
+const FORM_ENDPOINT = process.env.FORMSPREE_ENDPOINT
 const WINDOW_MS = 10 * 60 * 1000
 const MAX_REQUESTS_PER_WINDOW = 5
 const MAX_CONTENT_LENGTH = 20_000
@@ -96,15 +96,22 @@ export async function POST(request) {
     return NextResponse.json({ message: 'Invalid email address.' }, { status: 400 })
   }
 
+  if (!FORM_ENDPOINT) {
+    console.error('[contact][misconfigured] FORMSPREE_ENDPOINT env var is not set')
+    return NextResponse.json({ message: 'Contact form is not configured.' }, { status: 503 })
+  }
+
   const abortController = new AbortController()
   const timeout = setTimeout(() => abortController.abort(), 8000)
 
   try {
+    const clientOrigin = request.headers.get('origin') || ''
     const upstream = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        ...(clientOrigin && { Referer: clientOrigin, Origin: clientOrigin }),
       },
       body: JSON.stringify({
         name,
