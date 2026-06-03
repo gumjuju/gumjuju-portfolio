@@ -530,8 +530,9 @@ footer {
   .gallery-grid { columns: 2; column-gap: 10px; }
   .gallery-item { margin-bottom: 10px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-portrait { aspect-ratio: 4/3; }
+  .about-portrait { aspect-ratio: 3/4; max-height: 480px; }
   .about-stats { gap: 24px; flex-wrap: wrap; }
+  .about-quote { font-size: 1.8rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .form-row { grid-template-columns: 1fr; }
   footer { padding: 28px 24px; flex-direction: column; gap: 16px; text-align: center; }
@@ -552,8 +553,10 @@ footer {
   .gallery-grid { columns: 1; }
   .filter-row { gap: 6px; }
   .filter-btn { padding: 7px 14px; font-size: 0.7rem; }
-  .about-stats { gap: 20px; }
-  .stat-number { font-size: 2.2rem; }
+  .about-stats { gap: 16px; }
+  .stat-number { font-size: 2rem; }
+  .about-quote { font-size: 1.5rem; }
+  .about-portrait { aspect-ratio: 3/4; max-height: 380px; }
   .contact-grid { gap: 36px; }
   .contact-line-icon { width: 28px; height: 28px; font-size: 0.9rem; }
   .form-submit { padding: 16px 28px; width: 100%; justify-content: center; }
